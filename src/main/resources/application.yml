@@ -1,0 +1,24 @@
+server:
+  port: 5678
+spring:
+  #数据库连接配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db_wxzhongyao?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: cgland88
+#    password: wly310
+#
+#  mvc:
+#    static-path-pattern:/mybatis/*
+#  resources:
+#    static-locations:classpath:/mybatis/
+
+
+#mybatis的相关配置
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.student.wxzhongyao.dao.ArticleDao    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件

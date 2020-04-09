@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.student.wxzhongyao.dao.ArticleDao">
+
+    <select id="findAll" resultType="com.student.wxzhongyao.entity.Article">
+		select article_id,article_title,article_poster,article_description,article_date from article;
+	</select>
+
+	<select id="findOne" parameterType="Integer" resultType="com.student.wxzhongyao.entity.Article">
+		select article_id,article_title,article_poster,article_description,article_date from article where article_id = #{id};
+	</select>
+</mapper>
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.student.wxzhongyao.dao.CollectArticleDao">
+
+    <insert id="addCollectArticle">
+		INSERT INTO collect_article (`user_id`, `article_id`, `article_title`,`article_poster`,`collect_time`) VALUES (#{user_id},#{article_id},#{article_title},#{article_poster},now());
+
+	</insert>
+
+    <select id="findCollectArticle" parameterType="Integer" resultType="com.student.wxzhongyao.entity.CollectArticle">
+        select * from collect_article where user_id = #{user_id}
+    </select>
+
+</mapper>
+
+
